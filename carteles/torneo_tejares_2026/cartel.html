@@ -16,9 +16,16 @@
   html,body{background:var(--marino)}
   body{width:1080px;height:1358px;overflow:hidden;font-family:'Poppins',sans-serif;color:var(--blanco)}
   .cartel{position:relative;width:1080px;height:1358px;overflow:hidden;
-          background:radial-gradient(ellipse 70% 50% at 85% 10%, #1f6fe0 0%, transparent 60%),
-                     radial-gradient(ellipse 60% 40% at 0% 60%, #12459e 0%, transparent 70%),
-                     linear-gradient(160deg,#0b3a99 0%,#072a73 45%,#04173f 100%)}
+          background:radial-gradient(ellipse 60% 45% at 30% 22%, rgba(90,170,255,.55) 0%, transparent 65%),
+                     radial-gradient(ellipse 55% 40% at 95% 5%, #3d8bff 0%, transparent 60%),
+                     radial-gradient(ellipse 70% 40% at 50% 75%, rgba(40,120,255,.45) 0%, transparent 70%),
+                     linear-gradient(165deg,#1660e6 0%,#0d47c0 40%,#0a359a 75%,#072774 100%)}
+  /* trama de puntos y destellos */
+  .trama{position:absolute;width:420px;height:420px;background-image:radial-gradient(rgba(255,255,255,.22) 2.5px, transparent 3px);background-size:18px 18px}
+  .trama.t1{left:-90px;top:-60px;-webkit-mask-image:radial-gradient(circle at 30% 30%, #000 0%, transparent 65%);mask-image:radial-gradient(circle at 30% 30%, #000 0%, transparent 65%)}
+  .trama.t2{right:-120px;top:720px;background-image:radial-gradient(rgba(212,240,0,.35) 2.5px, transparent 3px);-webkit-mask-image:radial-gradient(circle at 70% 40%, #000 0%, transparent 65%);mask-image:radial-gradient(circle at 70% 40%, #000 0%, transparent 65%)}
+  .brillo{position:absolute;left:-40px;top:200px;width:720px;height:360px;background:radial-gradient(ellipse at center, rgba(212,240,0,.28) 0%, transparent 65%);filter:blur(10px)}
+  .deco{position:absolute;inset:0;pointer-events:none}
 
   /* Fondo: líneas de pista en perspectiva + franjas diagonales */
   .fondo{position:absolute;inset:0}
@@ -56,18 +63,19 @@
   .dia .der .b{font-weight:700;font-size:18px;line-height:1.2;margin-top:6px}
 
   /* Tarjetas de iconos */
-  .tarjetas{position:absolute;top:800px;left:56px;right:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-  .tj{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:16px 10px 14px;text-align:center;backdrop-filter:blur(4px)}
-  .tj svg{width:50px;height:50px;display:block;margin:0 auto 8px}
+  .tarjetas{position:absolute;top:826px;left:56px;right:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .tj{position:relative;background:linear-gradient(180deg,#2a74ee 0%,#1450c4 100%);border:2px solid rgba(255,255,255,.35);border-radius:20px;padding:46px 10px 16px;text-align:center;box-shadow:0 12px 24px rgba(0,20,80,.35)}
+  .tj .ico{position:absolute;left:50%;top:-34px;transform:translateX(-50%);width:72px;height:72px;border-radius:50%;background:var(--lima);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,.3), 0 0 0 5px #0d47c0}
+  .tj .ico svg{width:42px;height:42px}
   .tj .t1{font-weight:900;font-style:italic;font-size:19px;line-height:1.05;text-transform:uppercase}
-  .tj .t2{font-weight:600;font-size:15px;line-height:1.2;margin-top:5px;color:#cfe0ff}
-  .tj .grande{font-family:'Poppins',sans-serif;font-weight:900;font-size:40px;line-height:1.1;color:var(--lima)}
+  .tj .t2{font-weight:600;font-size:15px;line-height:1.2;margin-top:5px;color:#e3eeff}
+  .tj .grande{font-family:'Poppins',sans-serif;font-weight:900;font-size:30px;line-height:1;color:var(--marino);letter-spacing:-1px}
 
   /* Premios (panel blanco) */
-  .premios{position:absolute;left:56px;right:56px;top:1012px;height:206px;background:var(--blanco);color:var(--marino2);border-radius:22px;padding:22px 26px;box-shadow:0 16px 34px rgba(0,0,0,.4)}
-  .premios h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;display:flex;align-items:center;gap:12px}
+  .premios{position:absolute;left:56px;right:56px;top:1016px;height:220px;background:var(--blanco);color:var(--marino2);border-radius:22px;padding:0 26px 20px;overflow:hidden;box-shadow:0 16px 34px rgba(0,0,0,.4)}
+  .premios h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;display:flex;align-items:center;gap:12px;background:var(--lima);margin:0 -26px;padding:12px 26px;color:var(--marino)}
   .premios h3 svg{width:40px;height:40px}
-  .cats{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:6px}
+  .cats{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:4px}
   .cats .col + .col{border-left:2px solid #e2ebfa;padding-left:26px}
   .cat{margin-top:12px}
   .cat .etq{background:var(--azul);color:var(--blanco);font-weight:900;font-style:italic;font-size:15px;line-height:1.1;padding:6px 14px;border-radius:8px;text-transform:uppercase;display:inline-block}
@@ -108,10 +116,40 @@
         <path d="M-175 -180c110 95 110 265 0 360M175 -180c-110 95-110 265 0 360" fill="none" stroke="#d4f000" stroke-width="10"/>
       </g>
     </svg>
+    <div class="brillo"></div>
+    <div class="trama t1"></div>
+    <div class="trama t2"></div>
     <div class="franja f3"></div>
     <div class="franja f1"><span>TORNEO OPEN<em>●</em>ACCESO LIBRE<em>●</em>TORNEO OPEN<em>●</em>ACCESO LIBRE</span></div>
     <div class="franja f2"></div>
   </div>
+
+  <svg class="deco" width="1080" height="1358" viewBox="0 0 1080 1358" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="star" d="M0-18C2-6 6-2 18 0 6 2 2 6 0 18-2 6-6 2-18 0-6-2-2-6 0-18z"/>
+      <radialGradient id="bola" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#f4ff8a"/><stop offset=".55" stop-color="#d4f000"/><stop offset="1" stop-color="#8fb000"/></radialGradient>
+    </defs>
+    <use href="#star" transform="translate(395 212) scale(.9)" fill="#d4f000"/>
+    <use href="#star" transform="translate(640 250) scale(.6)" fill="#ffffff"/>
+    <use href="#star" transform="translate(390 520) scale(.7)" fill="#ffffff"/>
+    <use href="#star" transform="translate(690 540) scale(1)" fill="#d4f000"/>
+    <use href="#star" transform="translate(250 30) scale(.5)" fill="#ffffff"/>
+    <use href="#star" transform="translate(1040 790) scale(.6)" fill="#ffffff"/>
+    <use href="#star" transform="translate(30 790) scale(.7)" fill="#d4f000"/>
+    <circle cx="560" cy="170" r="5" fill="#d4f000"/><circle cx="470" cy="560" r="4" fill="#fff"/><circle cx="660" cy="150" r="3" fill="#fff"/>
+    <!-- pelota sobre el calendario -->
+    <g transform="translate(700 186) rotate(-20)">
+      <ellipse cx="4" cy="8" rx="34" ry="34" fill="rgba(0,0,0,.25)"/>
+      <circle r="34" fill="url(#bola)"/>
+      <path d="M-24 -24c14 12 14 36 0 48M24 -24c-14 12-14 36 0 48" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <!-- pelota sobre 2026 -->
+    <g transform="translate(410 470) rotate(15)">
+      <ellipse cx="3" cy="6" rx="24" ry="24" fill="rgba(0,0,0,.25)"/>
+      <circle r="24" fill="url(#bola)"/>
+      <path d="M-17 -17c10 8 10 26 0 34M17 -17c-10 8-10 26 0 34" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </svg>
 
   <img class="logo esc" src="assets/logo_escuela.png" alt="Escuela de pádel">
   <img class="logo tec" src="assets/logo_tecnifibre.png" alt="Tecnifibre">
@@ -140,30 +178,31 @@
   <!-- Tarjetas -->
   <div class="tarjetas">
     <div class="tj">
-      <svg viewBox="0 0 64 64" fill="#fff"><circle cx="22" cy="18" r="9"/><circle cx="44" cy="20" r="8"/><path d="M6 50c0-10 7-17 16-17s16 7 16 17v3H6z"/><path d="M40 33c9 0 18 6 18 16v4H42v-4c0-6-2-11-6-15 1-.6 2.5-1 4-1z" opacity=".85"/></svg>
+      <div class="ico"><svg viewBox="0 0 64 64" fill="#051c4f"><circle cx="22" cy="18" r="9"/><circle cx="44" cy="20" r="8"/><path d="M6 50c0-10 7-17 16-17s16 7 16 17v3H6z"/><path d="M40 33c9 0 18 6 18 16v4H42v-4c0-6-2-11-6-15 1-.6 2.5-1 4-1z" opacity=".85"/></svg></div>
       <div class="t1">Femenina<br>y masculina</div><div class="t2">1ª y 2ª categoría</div>
     </div>
     <div class="tj">
-      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#fff" stroke-width="5"/><path d="M14 13c9 8 9 30 0 38M50 13c-9 8-9 30 0 38" fill="none" stroke="#fff" stroke-width="4"/></svg>
+      <div class="ico"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#051c4f" stroke-width="5"/><path d="M14 13c9 8 9 30 0 38M50 13c-9 8-9 30 0 38" fill="none" stroke="#051c4f" stroke-width="4"/></svg></div>
       <div class="t1">Mínimo<br>2 partidos</div><div class="t2">asegurados</div>
     </div>
     <div class="tj">
-      <div class="grande" style="margin:4px 0 6px">20€</div>
-      <div class="t1">Inscripción</div><div class="t2">por persona</div>
+      <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="4.5"><ellipse cx="26" cy="16" rx="16" ry="6"/><path d="M10 16v8c0 3.3 7.2 6 16 6s16-2.7 16-6v-8M10 24v8c0 3.3 7.2 6 16 6M10 32v8c0 3.3 7.2 6 16 6"/><ellipse cx="42" cy="38" rx="14" ry="5.5"/><path d="M28 38v8c0 3 6.3 5.5 14 5.5S56 49 56 46v-8M28 46v6c0 3 6.3 5.5 14 5.5S56 55 56 52v-6"/></svg></div>
+      <div class="grande" style="color:var(--lima);font-size:36px;margin:-4px 0 0">20€</div>
+      <div class="t1" style="font-size:17px">Inscripción</div><div class="t2">por persona</div>
     </div>
     <div class="tj">
-      <svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><rect x="8" y="24" width="48" height="12"/><rect x="12" y="36" width="40" height="22"/><path d="M32 24v34"/><path d="M32 24c-4-10-16-12-16-4 0 4 8 4 16 4zM32 24c4-10 16-12 16-4 0 4-8 4-16 4z"/></svg>
+      <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="4" stroke-linejoin="round"><rect x="8" y="24" width="48" height="12"/><rect x="12" y="36" width="40" height="22"/><path d="M32 24v34"/><path d="M32 24c-4-10-16-12-16-4 0 4 8 4 16 4zM32 24c4-10 16-12 16-4 0 4-8 4-16 4z"/></svg></div>
       <div class="t1">Welcome<br>pack</div><div class="t2">para todos</div>
     </div>
     <div class="tj">
-      <svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><path d="M24 6C18 16 10 24 10 34a14 14 0 0 0 28 0C38 24 30 16 24 6z"/><path d="M18 36a6 6 0 0 0 6 6"/><path d="M44 32c-4-3-12-2-12 8 0 9 6 16 12 14 6 2 12-5 12-14 0-10-8-11-12-8z"/><path d="M44 32c0-4 1-6 4-8"/></svg>
+      <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="4" stroke-linejoin="round"><path d="M24 6C18 16 10 24 10 34a14 14 0 0 0 28 0C38 24 30 16 24 6z"/><path d="M18 36a6 6 0 0 0 6 6"/><path d="M44 32c-4-3-12-2-12 8 0 9 6 16 12 14 6 2 12-5 12-14 0-10-8-11-12-8z"/><path d="M44 32c0-4 1-6 4-8"/></svg></div>
       <div class="t1">Agua<br>y fruta</div><div class="t2">todo el torneo</div>
     </div>
   </div>
 
   <!-- Premios -->
   <div class="premios">
-    <h3><svg viewBox="0 0 64 64"><path d="M18 8h28v14c0 9-6 16-14 16S18 31 18 22z" fill="#0d47b8"/><path d="M18 13H8c0 9 4 14 11 15M46 13h10c0 9-4 14-11 15" fill="none" stroke="#0d47b8" stroke-width="4"/><rect x="29" y="37" width="6" height="10" fill="#0d47b8"/><rect x="19" y="47" width="26" height="8" rx="2" fill="#d4f000" stroke="#0d47b8" stroke-width="2"/></svg>PREMIOS</h3>
+    <h3><svg viewBox="0 0 64 64"><path d="M18 8h28v14c0 9-6 16-14 16S18 31 18 22z" fill="#051c4f"/><path d="M18 13H8c0 9 4 14 11 15M46 13h10c0 9-4 14-11 15" fill="none" stroke="#051c4f" stroke-width="4"/><rect x="29" y="37" width="6" height="10" fill="#051c4f"/><rect x="19" y="47" width="26" height="8" rx="2" fill="#fff" stroke="#051c4f" stroke-width="2"/></svg>PREMIOS</h3>
     <div class="cats">
       <div class="col cat">
         <div class="etq">Primera categoría</div>
