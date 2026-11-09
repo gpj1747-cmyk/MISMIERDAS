@@ -6,7 +6,7 @@ apagados (sin blanco puro), virado partido (sombras neutras-cálidas, luces
 verdosas/cian frías), textura de trama de impresión + grano y viñeta suave.
 
 Uso:
-    python3 tools/aplicar_estilo.py entrada.jpg [salida.jpg] [--grano 1.0] [--trama 1.0]
+    python3 tools/aplicar_estilo.py entrada.jpg [salida.jpg] [--grano 1.0] [--trama 1.0] [--gamma 1.15]
 """
 import argparse
 from pathlib import Path
@@ -21,18 +21,20 @@ SOMBRA_RGB = np.array([48, 46.5, 43]) / 46.0    # tinte en sombras (ligeramente 
 LUZ_RGB = np.array([182, 198, 187]) / 189.0     # tinte en luces (verde-cian)
 
 
-def estilizar(img: Image.Image, grano: float = 1.0, trama: float = 1.0, seed: int = 7) -> Image.Image:
+def estilizar(img: Image.Image, grano: float = 1.0, trama: float = 1.0, seed: int = 7,
+              mezcla=(0.22, 0.62, 0.16), gamma: float = 1.15) -> Image.Image:
     rng = np.random.default_rng(seed)
     img = img.convert("RGB")
     # Suavizado leve: la referencia es una reproducción, no tiene nitidez digital
     img = img.filter(ImageFilter.GaussianBlur(radius=max(img.size) / 1600))
     a = np.asarray(img).astype(np.float32) / 255.0
-    lum = a @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
+    # Mezcla B/N con poco rojo (película de la época): la piel no se quema y conserva textura
+    lum = a @ np.array(mezcla, dtype=np.float32)
     h, w = lum.shape
 
     # Normalizar y curva en S suave (contraste medio con medios tonos generosos)
     lo, hi = np.percentile(lum, [1, 99])
-    lum = np.clip((lum - lo) / max(hi - lo, 1e-6), 0, 1)
+    lum = np.clip((lum - lo) / max(hi - lo, 1e-6), 0, 1) ** gamma
     lum = lum + 0.18 * np.sin(np.pi * lum) * (lum - 0.5) * 2 * 0.5
     lum = np.clip(lum, 0, 1)
 
@@ -66,10 +68,11 @@ def main():
     p.add_argument("salida", nargs="?")
     p.add_argument("--grano", type=float, default=1.0)
     p.add_argument("--trama", type=float, default=1.0)
+    p.add_argument("--gamma", type=float, default=1.15, help=">1 oscurece medios tonos")
     args = p.parse_args()
     src = Path(args.entrada)
     dst = Path(args.salida) if args.salida else src.with_name(src.stem + "_estilo.jpg")
-    estilizar(Image.open(src), args.grano, args.trama).save(dst, quality=92)
+    estilizar(Image.open(src), args.grano, args.trama, gamma=args.gamma).save(dst, quality=92)
     print(dst)
 
 
