@@ -64,23 +64,16 @@
   .tj .grande{font-family:'Poppins',sans-serif;font-weight:900;font-size:40px;line-height:1.1;color:var(--lima)}
 
   /* Premios (panel blanco) */
-  .premios{position:absolute;left:56px;top:1000px;width:560px;height:236px;background:var(--blanco);color:var(--marino2);border-radius:22px;padding:22px 26px;box-shadow:0 16px 34px rgba(0,0,0,.4)}
+  .premios{position:absolute;left:56px;right:56px;top:1012px;height:206px;background:var(--blanco);color:var(--marino2);border-radius:22px;padding:22px 26px;box-shadow:0 16px 34px rgba(0,0,0,.4)}
   .premios h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;display:flex;align-items:center;gap:12px}
   .premios h3 svg{width:40px;height:40px}
-  .cat{margin-top:16px;display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:start}
-  .cat .etq{background:var(--azul);color:var(--blanco);font-weight:900;font-style:italic;font-size:15px;line-height:1.1;padding:6px 8px;border-radius:8px;text-align:center;text-transform:uppercase}
-  .cat ul{list-style:none}
-  .cat li{font-weight:600;font-size:18.5px;line-height:1.3}
+  .cats{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:6px}
+  .cats .col + .col{border-left:2px solid #e2ebfa;padding-left:26px}
+  .cat{margin-top:12px}
+  .cat .etq{background:var(--azul);color:var(--blanco);font-weight:900;font-style:italic;font-size:15px;line-height:1.1;padding:6px 14px;border-radius:8px;text-transform:uppercase;display:inline-block}
+  .cat ul{list-style:none;margin-top:10px}
+  .cat li{font-weight:600;font-size:21px;line-height:1.3;margin-bottom:6px}
   .cat li b{font-weight:900}
-
-  /* Info a la derecha */
-  .info{position:absolute;left:650px;right:56px;top:1004px}
-  .info h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;color:var(--lima)}
-  .info ul{list-style:none;margin-top:12px}
-  .info li{position:relative;padding-left:32px;font-weight:600;font-size:18.5px;line-height:1.3;margin-bottom:10px}
-  .info li::before{content:'';position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--lima)}
-  .info li::after{content:'';position:absolute;left:6px;top:8px;width:6px;height:10px;border:solid var(--marino);border-width:0 3px 3px 0;transform:rotate(45deg)}
-  .info b{font-weight:800}
 
   /* Pegatina sorteo */
   .sorteo{position:absolute;right:64px;top:540px;width:196px;height:196px;border-radius:50%;background:var(--lima);color:var(--marino);
@@ -171,18 +164,20 @@
   <!-- Premios -->
   <div class="premios">
     <h3><svg viewBox="0 0 64 64"><path d="M18 8h28v14c0 9-6 16-14 16S18 31 18 22z" fill="#0d47b8"/><path d="M18 13H8c0 9 4 14 11 15M46 13h10c0 9-4 14-11 15" fill="none" stroke="#0d47b8" stroke-width="4"/><rect x="29" y="37" width="6" height="10" fill="#0d47b8"/><rect x="19" y="47" width="26" height="8" rx="2" fill="#d4f000" stroke="#0d47b8" stroke-width="2"/></svg>PREMIOS</h3>
-    <div class="cat">
-      <div class="etq">Primera<br>categoría</div>
-      <ul>
-        <li><b>Campeones:</b> palas Tecnifibre gama Curve</li>
-        <li><b>Subcampeones:</b> mochilas Tecnifibre</li>
-      </ul>
-    </div>
-    <div class="cat">
-      <div class="etq">Segunda<br>categoría</div>
-      <ul>
-        <li><b>Campeones:</b> neceser Tecnifibre</li>
-      </ul>
+    <div class="cats">
+      <div class="col cat">
+        <div class="etq">Primera categoría</div>
+        <ul>
+          <li><b>Campeones:</b> palas Tecnifibre gama Curve</li>
+          <li><b>Subcampeones:</b> mochilas Tecnifibre</li>
+        </ul>
+      </div>
+      <div class="col cat">
+        <div class="etq">Segunda categoría</div>
+        <ul>
+          <li><b>Campeones:</b> neceser Tecnifibre</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -190,18 +185,6 @@
   <div class="sorteo">
     <div class="s1">SORTEO</div>
     <div class="s2">de una pala<br>Tecnifibre</div>
-  </div>
-
-  <!-- Info -->
-  <div class="info">
-    <h3>EL TORNEO</h3>
-    <ul>
-      <li><b>Open:</b> acceso libre para todos</li>
-      <li>Categoría <b>femenina</b> y <b>masculina</b></li>
-      <li><b>Primera</b> y <b>segunda</b> categoría</li>
-      <li><b>Dos partidos mínimo</b> asegurados</li>
-      <li>Premios el domingo en el <b>ambigú</b></li>
-    </ul>
   </div>
 
   <!-- Pie -->
