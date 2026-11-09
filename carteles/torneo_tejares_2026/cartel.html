@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>I Torneo Tejares 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <style>
   :root{
     --lima:#d4f000;
@@ -14,7 +14,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{background:var(--marino)}
-  body{width:1080px;height:1358px;overflow:hidden;font-family:'Montserrat',sans-serif;color:var(--blanco)}
+  body{width:1080px;height:1358px;overflow:hidden;font-family:'Poppins',sans-serif;color:var(--blanco)}
   .cartel{position:relative;width:1080px;height:1358px;overflow:hidden;
           background:radial-gradient(ellipse 70% 50% at 85% 10%, #1f6fe0 0%, transparent 60%),
                      radial-gradient(ellipse 60% 40% at 0% 60%, #12459e 0%, transparent 70%),
@@ -24,7 +24,7 @@
   .fondo{position:absolute;inset:0}
   .franja{position:absolute;left:-200px;width:1500px;transform:rotate(-6deg);transform-origin:left top}
   .franja.f1{top:668px;height:84px;background:var(--lima);display:flex;align-items:center;white-space:nowrap;overflow:hidden}
-  .franja.f1 span{font-family:'Anton',sans-serif;font-size:50px;letter-spacing:3px;color:var(--marino);padding-left:236px}
+  .franja.f1 span{font-family:'Poppins',sans-serif;font-weight:900;font-style:italic;font-size:40px;letter-spacing:1px;color:var(--marino);padding-left:236px}
   .franja.f1 span em{font-style:normal;color:var(--azul);margin:0 22px}
   .franja.f2{top:644px;height:10px;background:var(--lima);opacity:.55}
   .franja.f3{top:600px;height:220px;background:rgba(255,255,255,.05)}
@@ -38,9 +38,9 @@
   .titulo{position:absolute;left:56px;top:196px}
   .edicion{display:inline-flex;align-items:center;gap:14px;font-weight:900;font-style:italic;font-size:34px;letter-spacing:3px;color:var(--lima);text-transform:uppercase}
   .edicion i{display:inline-block;width:60px;height:5px;background:var(--lima)}
-  .nombre{font-family:'Anton',sans-serif;font-size:190px;line-height:.9;letter-spacing:2px;margin-top:10px;text-shadow:0 10px 24px rgba(0,10,40,.5)}
+  .nombre{font-family:'Poppins',sans-serif;font-weight:900;font-size:146px;line-height:1;letter-spacing:-5px;margin-top:4px;margin-left:-6px;text-shadow:0 10px 24px rgba(0,10,40,.5)}
   .anio{display:flex;align-items:center;gap:20px;margin-top:10px}
-  .anio .num{font-family:'Anton',sans-serif;font-size:120px;line-height:.9;color:transparent;-webkit-text-stroke:4px var(--lima);letter-spacing:4px}
+  .anio .num{font-family:'Poppins',sans-serif;font-weight:800;font-size:124px;line-height:1;color:transparent;-webkit-text-stroke:3px var(--lima);letter-spacing:2px}
   .anio .open{border:3px solid var(--blanco);border-radius:999px;padding:8px 24px;font-weight:900;font-style:italic;font-size:26px;line-height:1.1;text-transform:uppercase}
   .anio .open small{display:block;font-weight:600;font-style:normal;font-size:18px;color:var(--lima);text-transform:none}
 
@@ -49,10 +49,10 @@
   .dia{display:flex;align-items:stretch;width:310px;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.4)}
   .dia .izq{width:120px;background:var(--lima);color:var(--marino);text-align:center;padding:12px 0 10px}
   .dia .izq .ds{font-weight:900;font-size:20px;letter-spacing:2px}
-  .dia .izq .n{font-family:'Anton',sans-serif;font-size:76px;line-height:1}
+  .dia .izq .n{font-family:'Poppins',sans-serif;font-weight:900;font-size:62px;line-height:1.05;letter-spacing:-2px}
   .dia .izq .m{font-weight:900;font-size:18px;letter-spacing:3px}
   .dia .der{flex:1;background:var(--blanco);color:var(--marino2);display:flex;flex-direction:column;justify-content:center;padding:0 18px}
-  .dia .der .a{font-family:'Anton',sans-serif;font-size:36px;line-height:1;letter-spacing:1px}
+  .dia .der .a{font-family:'Poppins',sans-serif;font-weight:900;font-size:28px;line-height:1;letter-spacing:0}
   .dia .der .b{font-weight:700;font-size:18px;line-height:1.2;margin-top:6px}
 
   /* Tarjetas de iconos */
@@ -61,11 +61,11 @@
   .tj svg{width:50px;height:50px;display:block;margin:0 auto 8px}
   .tj .t1{font-weight:900;font-style:italic;font-size:19px;line-height:1.05;text-transform:uppercase}
   .tj .t2{font-weight:600;font-size:15px;line-height:1.2;margin-top:5px;color:#cfe0ff}
-  .tj .grande{font-family:'Anton',sans-serif;font-size:44px;line-height:1;color:var(--lima)}
+  .tj .grande{font-family:'Poppins',sans-serif;font-weight:900;font-size:40px;line-height:1.1;color:var(--lima)}
 
   /* Premios (panel blanco) */
   .premios{position:absolute;left:56px;top:1000px;width:560px;height:236px;background:var(--blanco);color:var(--marino2);border-radius:22px;padding:22px 26px;box-shadow:0 16px 34px rgba(0,0,0,.4)}
-  .premios h3{font-family:'Anton',sans-serif;font-size:40px;letter-spacing:1.5px;line-height:1;display:flex;align-items:center;gap:12px}
+  .premios h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;display:flex;align-items:center;gap:12px}
   .premios h3 svg{width:40px;height:40px}
   .cat{margin-top:16px;display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:start}
   .cat .etq{background:var(--azul);color:var(--blanco);font-weight:900;font-style:italic;font-size:15px;line-height:1.1;padding:6px 8px;border-radius:8px;text-align:center;text-transform:uppercase}
@@ -75,7 +75,7 @@
 
   /* Info a la derecha */
   .info{position:absolute;left:650px;right:56px;top:1004px}
-  .info h3{font-family:'Anton',sans-serif;font-size:40px;letter-spacing:1.5px;line-height:1;color:var(--lima)}
+  .info h3{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;letter-spacing:0;line-height:1;color:var(--lima)}
   .info ul{list-style:none;margin-top:12px}
   .info li{position:relative;padding-left:32px;font-weight:600;font-size:18.5px;line-height:1.3;margin-bottom:10px}
   .info li::before{content:'';position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--lima)}
@@ -86,7 +86,7 @@
   .sorteo{position:absolute;right:64px;top:540px;width:196px;height:196px;border-radius:50%;background:var(--lima);color:var(--marino);
           display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(12deg);
           box-shadow:0 12px 26px rgba(0,0,0,.45), inset 0 0 0 5px var(--marino), inset 0 0 0 9px var(--lima), inset 0 0 0 11px var(--marino)}
-  .sorteo .s1{font-family:'Anton',sans-serif;font-size:46px;line-height:1;letter-spacing:1px}
+  .sorteo .s1{font-family:'Poppins',sans-serif;font-weight:900;font-size:34px;line-height:1;letter-spacing:-.5px}
   .sorteo .s2{font-weight:900;font-style:italic;font-size:17px;line-height:1.1;margin-top:3px;text-transform:uppercase}
 
   /* Pie */
