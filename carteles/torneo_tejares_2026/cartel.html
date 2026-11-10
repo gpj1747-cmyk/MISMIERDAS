@@ -44,11 +44,8 @@
   .dia .a{font-weight:900;font-size:26px;line-height:1.05;text-transform:uppercase}
   .dia .b{font-weight:500;font-size:17px;line-height:1.25;margin-top:4px;opacity:.9}
 
-  /* Franja */
-  .franja{position:absolute;left:-60px;top:618px;width:1220px;height:76px;background:var(--lima);transform:rotate(-4deg);
-          display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.3)}
-  .franja span{font-weight:900;font-style:italic;font-size:34px;letter-spacing:.5px;color:var(--marino);text-transform:uppercase;white-space:nowrap}
-  .franja em{font-style:normal;margin:0 20px;opacity:.55}
+  .lema{display:inline-block;margin-top:16px;padding:10px 22px;font-weight:900;font-style:italic;font-size:24px;letter-spacing:.5px;text-transform:uppercase}
+  .lema em{font-style:normal;color:var(--lima);margin:0 12px;-webkit-text-stroke:1px var(--marino)}
 
   /* Bloque inferior */
   .tarjetas{position:absolute;left:var(--m);right:var(--m);top:906px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
@@ -66,7 +63,7 @@
   .premios p{font-weight:500;font-size:18px;line-height:1.35;margin-top:8px}
   .premios p b{font-weight:800}
 
-  .sorteo{position:absolute;right:76px;top:672px;width:168px;height:168px;border-radius:50%;background:var(--lima);color:var(--marino);
+  .sorteo{position:absolute;right:126px;top:462px;width:176px;height:176px;border-radius:50%;background:var(--lima);color:var(--marino);
           display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(10deg);
           box-shadow:0 10px 24px rgba(0,0,0,.45), inset 0 0 0 4px var(--marino), inset 0 0 0 8px var(--lima), inset 0 0 0 10px var(--marino)}
   .sorteo .s1{font-weight:900;font-size:30px;line-height:1;letter-spacing:-.5px}
@@ -94,6 +91,7 @@
     <div class="edicion">I Torneo</div>
     <div class="nombre">TEJARES</div>
     <div class="anio">2026</div>
+    <div class="card lema">Torneo open<em>●</em>Acceso libre</div>
   </div>
 
   <div class="cal">
@@ -107,7 +105,6 @@
     </div>
   </div>
 
-  <div class="franja"><span>Torneo open<em>●</em>Acceso libre<em>●</em>1ª y 2ª categoría</span></div>
 
   <div class="tarjetas">
     <div class="card tj">
@@ -116,7 +113,7 @@
     </div>
     <div class="card tj">
       <svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="4" stroke-linecap="round"><circle cx="22" cy="20" r="8"/><circle cx="44" cy="22" r="7"/><path d="M8 52c0-9 6-16 14-16s14 7 14 16M38 37c2-1 4-1 6-1 7 0 12 6 12 15"/></svg>
-      <div class="t1">Femenina<br>y masculina</div>
+      <div class="t1">Femenina<br>y masculina</div><div class="t2">1ª y 2ª categoría</div>
     </div>
     <div class="card tj">
       <svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="4"><circle cx="32" cy="32" r="24"/><path d="M15 15c8 8 8 26 0 34M49 15c-8 8-8 26 0 34"/></svg>
