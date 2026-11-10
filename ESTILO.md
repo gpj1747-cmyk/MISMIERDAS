@@ -1,5 +1,7 @@
 # Guía de estilo visual
 
+> Otro estilo disponible: [pádel low-key](ESTILO_PADEL.md).
+
 Referencia: [`referencias/estilo_ref.jpg`](referencias/estilo_ref.jpg)
 
 ## Resumen
