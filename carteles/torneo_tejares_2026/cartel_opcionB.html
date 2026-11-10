@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>I Torneo Tejares 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  /* Columna de información a la izquierda (orden de lectura: qué, cuándo, cómo, premios) y foto libre a la derecha */
+  :root{
+    --lima:#d4f000;
+    --marino:#051c4f;
+    --blanco:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--marino)}
+  body{width:1080px;height:1358px;overflow:hidden;font-family:'Poppins',sans-serif;color:var(--blanco)}
+  .cartel{position:relative;width:1080px;height:1358px;overflow:hidden;background:var(--marino)}
+
+  .foto{position:absolute;left:-160px;top:-470px;width:1300px;height:auto;transform:scaleX(-1);filter:saturate(1.2) brightness(1.12) contrast(1.05)}
+  .velo{position:absolute;inset:0;background:linear-gradient(90deg, rgba(5,28,79,.25) 0%, rgba(5,28,79,0) 55%)}
+
+  /* Columna */
+  .col{position:absolute;left:40px;top:40px;bottom:118px;width:540px;padding:40px 44px 36px;border-radius:26px;
+       background:linear-gradient(180deg,rgba(38,110,230,.9) 0%,rgba(18,78,196,.92) 100%);border:1.5px solid rgba(255,255,255,.35);
+       box-shadow:0 20px 40px rgba(5,28,79,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column}
+  .sep{height:1.5px;background:rgba(255,255,255,.28);margin:28px 0}
+
+  .logo-esc{width:104px;filter:drop-shadow(0 2px 4px rgba(5,28,79,.5))}
+
+  .edicion{display:inline-block;align-self:flex-start;margin-top:26px;font-weight:800;font-size:22px;letter-spacing:4px;color:var(--marino);background:var(--lima);padding:3px 14px;border-radius:7px;text-transform:uppercase}
+  .nombre{font-weight:900;font-size:110px;line-height:.95;letter-spacing:-4px;margin:8px 0 0 -4px;text-shadow:0 5px 0 rgba(5,28,79,.3)}
+  .anio{font-weight:900;font-size:100px;line-height:.95;letter-spacing:-2px;color:var(--lima);text-shadow:0 5px 0 rgba(5,28,79,.3)}
+  .lema{margin-top:12px;font-weight:800;font-style:italic;font-size:21px;letter-spacing:.5px;text-transform:uppercase}
+  .lema em{font-style:normal;color:var(--lima);margin:0 10px}
+
+  /* Fechas */
+  .fechas{display:grid;grid-template-columns:1fr 1.1fr;gap:14px}
+  .fecha{display:flex;align-items:center;gap:10px}
+  .fecha .n{font-weight:900;font-size:62px;line-height:1;color:var(--lima);letter-spacing:-2px}
+  .fecha .a{font-weight:800;font-size:19px;line-height:1.1;text-transform:uppercase}
+  .fecha .a span{display:block;white-space:nowrap;font-weight:500;font-size:15px;text-transform:none;opacity:.9;margin-top:2px}
+
+  /* Lista de datos */
+  .datos{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+  .dato{display:flex;align-items:center;gap:12px}
+  .dato .ico{flex:none;width:54px;height:54px;border-radius:50%;background:var(--lima);display:flex;align-items:center;justify-content:center}
+  .dato .ico svg{width:32px;height:32px}
+  .dato .ico b{font-weight:900;font-size:17px;color:var(--marino);letter-spacing:-.5px}
+  .dato .t1{font-weight:800;font-size:17px;white-space:nowrap;line-height:1.1;text-transform:uppercase}
+  .dato .t2{font-weight:500;font-size:15px;line-height:1.2;opacity:.9}
+
+  /* Premios */
+  .premios h3{font-weight:900;font-size:28px;letter-spacing:1px;color:var(--lima);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .premios h3 svg{width:34px;height:34px}
+  .etq{display:inline-block;margin-top:16px;font-weight:800;font-size:13.5px;letter-spacing:2px;color:var(--marino);background:var(--lima);padding:2px 9px;border-radius:5px;text-transform:uppercase}
+  .premios p{font-weight:500;font-size:19px;line-height:1.4;margin-top:6px}
+  .premios p b{font-weight:800}
+  .nota{margin-top:auto;font-weight:500;font-style:italic;font-size:13px;opacity:.85}
+
+  /* Lado derecho */
+  .logo-tec{position:absolute;right:56px;top:56px;width:170px;filter:drop-shadow(0 2px 3px rgba(5,28,79,.9)) drop-shadow(0 4px 14px rgba(5,28,79,.7))}
+  .sorteo{position:absolute;right:70px;top:330px;width:210px;height:210px;border-radius:50%;background:var(--lima);color:var(--marino);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(10deg);
+          box-shadow:0 14px 30px rgba(5,28,79,.5), inset 0 0 0 5px var(--marino), inset 0 0 0 10px var(--lima), inset 0 0 0 12px var(--marino)}
+  .sorteo .s1{font-weight:900;font-size:38px;line-height:1;letter-spacing:-.5px}
+  .sorteo .s2{font-weight:700;font-size:18px;line-height:1.15;margin-top:6px}
+
+  /* Pie */
+  .pie{position:absolute;left:0;right:0;bottom:0;height:78px;background:var(--lima);color:var(--marino);display:flex;align-items:center;justify-content:center;gap:16px}
+  .pie svg{width:40px;height:40px}
+  .pie .tel{font-weight:600;font-size:24px;letter-spacing:2px;text-transform:uppercase}
+  .pie .tel b{font-weight:900;font-size:36px;letter-spacing:0;margin-left:10px}
+</style>
+</head>
+<body>
+<div class="cartel">
+
+  <img class="foto" src="assets/foto_pista.jpg" alt="">
+  <div class="velo"></div>
+
+  <div class="col">
+    <img class="logo-esc" src="assets/logo_escuela.png" alt="Escuela de pádel">
+
+    <div class="edicion">I Torneo</div>
+    <div class="nombre">TEJARES</div>
+    <div class="anio">2026</div>
+    <div class="lema">Torneo open<em>●</em>Acceso libre</div>
+
+    <div class="sep"></div>
+
+    <div class="fechas">
+      <div class="fecha"><div class="n">19</div><div class="a">Sáb · Dic<span>Día completo</span></div></div>
+      <div class="fecha"><div class="n">20</div><div class="a">Dom · Dic*<span>Hasta el mediodía</span></div></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="datos">
+      <div class="dato">
+        <div class="ico"><b>20€</b></div>
+        <div><div class="t1">Inscripción</div><div class="t2">por persona</div></div>
+      </div>
+      <div class="dato">
+        <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="5" stroke-linecap="round"><circle cx="22" cy="20" r="8"/><circle cx="44" cy="22" r="7"/><path d="M8 52c0-9 6-16 14-16s14 7 14 16M38 37c2-1 4-1 6-1 7 0 12 6 12 15"/></svg></div>
+        <div><div class="t1">Fem. y masc.</div><div class="t2">1ª y 2ª categoría</div></div>
+      </div>
+      <div class="dato">
+        <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="5"><circle cx="32" cy="32" r="24"/><path d="M15 15c8 8 8 26 0 34M49 15c-8 8-8 26 0 34"/></svg></div>
+        <div><div class="t1">Mín. 2 partidos</div><div class="t2">asegurados</div></div>
+      </div>
+      <div class="dato">
+        <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="5" stroke-linejoin="round"><rect x="8" y="24" width="48" height="12"/><rect x="12" y="36" width="40" height="22"/><path d="M32 24v34"/><path d="M32 24c-4-10-16-12-16-4 0 4 8 4 16 4zM32 24c4-10 16-12 16-4 0 4-8 4-16 4z"/></svg></div>
+        <div><div class="t1">Welcome pack</div><div class="t2">para todos</div></div>
+      </div>
+      <div class="dato">
+        <div class="ico"><svg viewBox="0 0 64 64" fill="none" stroke="#051c4f" stroke-width="5" stroke-linejoin="round"><path d="M24 6C18 16 10 24 10 34a14 14 0 0 0 28 0C38 24 30 16 24 6z"/><path d="M44 32c-4-3-12-2-12 8 0 9 6 16 12 14 6 2 12-5 12-14 0-10-8-11-12-8z"/></svg></div>
+        <div><div class="t1">Agua y fruta</div><div class="t2">todo el torneo</div></div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="premios">
+      <h3><svg viewBox="0 0 64 64" fill="none" stroke="#d4f000" stroke-width="5" stroke-linejoin="round"><path d="M18 8h28v14c0 9-6 16-14 16S18 31 18 22z"/><path d="M18 13H8c0 9 4 14 11 15M46 13h10c0 9-4 14-11 15"/><path d="M32 38v10M24 48h16v8H24z"/></svg>Premios</h3>
+      <div class="etq">Primera categoría</div>
+      <p><b>Campeones:</b> palas Tecnifibre gama Curve<br><b>Subcampeones:</b> mochilas Tecnifibre</p>
+      <div class="etq">Segunda categoría</div>
+      <p><b>Campeones:</b> neceser Tecnifibre</p>
+    </div>
+
+    <div class="nota">*Entrega de premios el domingo en el ambigú de Tejares</div>
+  </div>
+
+  <img class="logo-tec" src="assets/logo_tecnifibre.png" alt="Tecnifibre">
+
+  <div class="sorteo"><div class="s1">SORTEO</div><div class="s2">de una pala<br>Tecnifibre</div></div>
+
+  <div class="pie">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#051c4f"/><path d="M24 17c1.5 0 2.5.8 3 2l2.4 6c.4 1.2 0 2.4-1 3.2l-2.6 2c2 4.2 5 7.2 9 9l2-2.6c.8-1 2-1.4 3.2-1l6 2.4c1.2.5 2 1.5 2 3V45c0 2-1.6 3.6-3.6 3.6C30 48.6 15.4 34 15.4 20.6 15.4 18.6 17 17 19 17z" fill="#d4f000"/></svg>
+    <div class="tel">Inscripciones<b>605 84 90 24</b></div>
+  </div>
+
+</div>
+</body>
+</html>
