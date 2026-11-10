@@ -47,3 +47,11 @@ El filtro funciona mejor con fotos que ya tengan una luz dirigida; con una luz p
 
 ## Prompt para generación con IA
 > Low-key indoor padel sports photography, low angle shot, player lit by a single hard overhead spotlight emerging from pitch black background, off-center composition with large dark negative space, muted desaturated colors, teal-blue shadows, warm skin highlights, crushed pure blacks, unclipped highlights, faint out-of-focus arena lights and court fence, cinematic, candid mid-action moment, subtle fine grain.
+
+## Llevar una foto de exterior al mismo espacio
+Si la foto está hecha de día o en otra pista (muro, coches, sol), no basta con el filtro: hay que cambiar el fondo.
+```bash
+pip install "rembg[cpu]"
+python3 tools/cambiar_espacio_padel.py mi_foto.jpg salida.jpg
+```
+El script recorta al jugador (rembg, modelo `isnet-general-use`) y recupera la bola por color. Pone de fondo la oscuridad de la pista: velo petróleo, valla tenue y focos del techo desenfocados. Deja un charco de luz con sombra de contacto bajo los pies, reilumina al jugador como bajo un foco cenital y termina con la gradación de `aplicar_estilo_padel.py`. Opciones: `--suelo 0.8` (intensidad del charco) y `--sin-bola`.
