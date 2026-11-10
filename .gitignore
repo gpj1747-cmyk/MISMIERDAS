@@ -1,2 +1,3 @@
 # Fotos personales procesadas: no se suben al repo
 ejemplos/IMG_*
+__pycache__/
